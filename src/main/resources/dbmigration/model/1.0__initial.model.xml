@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<migration xmlns="http://ebean-orm.github.io/xml/ns/dbmigration">
+    <changeSet type="apply">
+        <createTable name="author" pkName="pk_author">
+            <column name="id" type="integer" primaryKey="true"/>
+            <column name="name" type="varchar"/>
+        </createTable>
+        <createTable name="post" pkName="pk_post">
+            <column name="id" type="integer" primaryKey="true"/>
+            <column name="author_id" type="integer" references="author.id" foreignKeyName="fk_post_author_id" foreignKeyIndex="ix_post_author_id"/>
+            <column name="title" type="varchar"/>
+        </createTable>
+    </changeSet>
+</migration>

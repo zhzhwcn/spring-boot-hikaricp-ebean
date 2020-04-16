@@ -1,0 +1,1 @@
+Demo of spring boot with hikariCP and Ebean
